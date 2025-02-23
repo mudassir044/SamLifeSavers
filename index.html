@@ -14,8 +14,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            background-color: #f8f9fa; /* Very light grey */
+            color: #343a40; /* Dark grey for text */
             line-height: 1.6;
             overflow-x: hidden; /* Prevent horizontal scrollbar */
             scroll-behavior: smooth; /* Smooth scrolling for anchor links */
@@ -29,13 +29,13 @@
         }
 
         a {
-            color: #03a9f4; /* Electric Blue */
+            color: #007bff; /* Bootstrap primary blue */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #ff9800; /* Warm Orange */
+            color: #0056b3; /* Darker blue on hover */
         }
 
         /* Utility Classes */
@@ -53,7 +53,7 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #03a9f4;
+            background-color: #007bff;
             color: #ffffff;
             border-radius: 5px;
             font-weight: 600;
@@ -64,7 +64,7 @@
         }
 
         .btn:hover {
-            background-color: #ff9800;
+            background-color: #0056b3;
             transform: translateY(-2px);
         }
 
@@ -80,67 +80,72 @@
             margin-top: 2rem;
         }
 
-        /* Dark Mode Toggle */
-        .dark-mode {
-            background-color: #212121;
-            color: #ffffff;
-        }
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(248, 249, 250, 0.9); /* Very light grey with transparency */
+    padding: 20px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(18, 18, 18, 0.9); /* Dark background with transparency */
-            padding: 20px 0;
-            z-index: 1000;
-            transition: background-color 0.3s ease, padding 0.3s ease;
-            backdrop-filter: blur(5px); /* Frosted glass effect */
-            -webkit-backdrop-filter: blur(5px); /* For Safari */
-        }
+.navbar.sticky {
+    background-color: #f8f9fa;
+    padding: 10px 0; /* Smaller padding when sticky */
+}
 
-        .navbar.sticky {
-            background-color: #121212;
-            padding: 10px 0; /* Smaller padding when sticky */
-        }
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Navbar Brand (Logo + Text) */
+.navbar-brand {
+    display: flex; /* Use flexbox for easier alignment */
+    align-items: center; /* Vertically center the logo and text */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #343a40; /* Inherits from body if not specified */
+}
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
+.navbar-logo {
+    height: 30px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and text */
+    vertical-align: middle; /* Align logo vertically with the text */
+    display: inline-block; /* Ensure proper spacing */
+}
 
-        .navbar-nav {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-        .navbar-nav li {
-            margin-left: 20px;
-        }
+.navbar-nav li {
+    margin-left: 20px;
+}
 
-        .navbar-nav li a {
-            color: #ffffff;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+.navbar-nav li a {
+    color: #343a40;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
-        .navbar-nav li a:hover {
-            color: #03a9f4;
-        }
+.navbar-nav li a:hover {
+    color: #007bff;
+}
 
         /* Highlighted Donate button in Navbar */
         .navbar-nav li a.donate-link {
-            background-color: #ff9800; /* Warm Orange */
+            background-color: #28a745; /* Bootstrap success green */
             color: #ffffff;
             padding: 8px 16px;
             border-radius: 5px;
@@ -148,7 +153,7 @@
         }
 
         .navbar-nav li a.donate-link:hover {
-            background-color: #f44336; /* Reddish hue for donate button hover */
+            background-color: #218838; /* Darker green for donate button hover */
         }
 
         .language-switcher {
@@ -160,7 +165,7 @@
         .language-switcher button {
             background-color: transparent;
             border: none;
-            color: #ffffff;
+            color: #343a40;
             cursor: pointer;
             font-size: 1rem;
             margin: 0 5px;
@@ -168,7 +173,7 @@
         }
 
         .language-switcher button:hover {
-            color: #03a9f4;
+            color: #007bff;
         }
 
         .auth-buttons {
@@ -179,8 +184,8 @@
 
         .auth-buttons button {
             background-color: transparent;
-            border: 1px solid #ffffff;
-            color: #ffffff;
+            border: 1px solid #343a40;
+            color: #343a40;
             padding: 8px 16px;
             border-radius: 5px;
             cursor: pointer;
@@ -189,9 +194,9 @@
         }
 
         .auth-buttons button:hover {
-            background-color: #03a9f4;
+            background-color: #007bff;
             color: #ffffff;
-            border-color: #03a9f4;
+            border-color: #007bff;
         }
 
         /* Hero Section */
@@ -203,6 +208,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden; /* Hide video overflow */
+             background-color: #e9ecef; /* Light grey background for hero */
         }
 
         .hero video {
@@ -216,7 +222,7 @@
         }
 
         .hero-content {
-            color: #ffffff;
+            color: #343a40;
             padding: 20px;
             position: relative; /* For z-index context */
         }
@@ -224,13 +230,13 @@
         .hero-content h1 {
             font-size: 4rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
         }
 
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content .btn {
@@ -244,7 +250,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            color: #ffffff;
+            color: #343a40;
             font-size: 2rem;
             animation: bounce 2s infinite;
             cursor: pointer;
@@ -264,7 +270,8 @@
 
         /* About Us Section */
         .about {
-            background-color: #212121;
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
         }
 
         .about .container {
@@ -286,7 +293,7 @@
         .about-left video {
             width: 100%;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         }
 
         .about-right h2 {
@@ -298,7 +305,7 @@
             line-height: 1.8;
         }
 
-        .timeline {
+         .timeline {
             position: relative;
             padding: 20px 0;
         }
@@ -310,7 +317,7 @@
             bottom: 0;
             left: 50%;
             width: 2px;
-            background-color: #424242;
+            background-color: #ced4da; /* Light grey */
             transform: translateX(-50%);
         }
 
@@ -330,7 +337,7 @@
             left: 50%;
             width: 12px;
             height: 12px;
-            background-color: #ff9800;
+            background-color: #28a745; /* Bootstrap success green */
             border-radius: 50%;
             transform: translateX(-50%);
             z-index: 1;
@@ -338,11 +345,12 @@
 
         .timeline-content {
             padding: 10px;
-            background-color: #303030;
+            background-color: #ffffff;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             width: 45%;
             margin-left: 5%; /* Offset content from center line */
+            border: 1px solid #ced4da; /* Light grey border */
         }
 
         .timeline-item:nth-child(even) .timeline-content {
@@ -366,6 +374,7 @@
             margin-right: 10px;
             cursor: pointer;
             transition: transform 0.3s ease;
+             border: 1px solid #ced4da;
         }
 
         .team-slider img:hover {
@@ -374,7 +383,7 @@
 
         /* Our Impact Section */
         .impact {
-            background-color: #121212;
+            background-color: #f8f9fa; /* Very light grey */
         }
 
         .impact .container {
@@ -389,10 +398,10 @@
         }
 
         .stat-card {
-            background-color: #212121;
+            background-color: #ffffff; /* White background */
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         }
 
         .stat-card h3 {
@@ -416,7 +425,7 @@
             width: 100%;
             max-width: 560px;
             height: 315px;
-            border: none;
+            border: 1px solid #ced4da;
         }
 
         .carousel-slider {
@@ -429,11 +438,11 @@
 
         .carousel-slider::-webkit-scrollbar {
             height: 8px; /* Height of the scrollbar */
-            background-color: #424242; /* Track color */
+            background-color: #ced4da; /* Track color */
         }
 
         .carousel-slider::-webkit-scrollbar-thumb {
-            background-color: #03a9f4; /* Thumb color */
+            background-color: #007bff; /* Thumb color */
             border-radius: 4px; /* Rounded corners */
         }
 
@@ -443,9 +452,10 @@
             margin-right: 20px;
             scroll-snap-align: start; /* Snap to the start of the slide */
             padding: 20px;
-            background-color: #212121;
+            background-color: #ffffff; /* White */
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for contrast */
+            border: 1px solid #ced4da;
         }
 
         .carousel-slide:last-child {
@@ -463,7 +473,8 @@
 
         /* Programs & Initiatives Section */
         .programs {
-            background-color: #212121;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .programs .container {
@@ -477,11 +488,12 @@
         }
 
         .program-card {
-            background-color: #303030;
+            background-color: #ffffff; /* White background */
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             transition: transform 0.3s ease;
+            border: 1px solid #ced4da;
         }
 
         .program-card:hover {
@@ -506,7 +518,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -523,10 +535,10 @@
         }
 
         .popup-content {
-            background-color: #212121;
+            background-color: #ffffff;
             padding: 30px;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 600px;
             position: relative;
@@ -546,7 +558,7 @@
             top: 10px;
             right: 10px;
             font-size: 2rem;
-            color: #ffffff;
+            color: #343a40;
             cursor: pointer;
             background: none;
             border: none;
@@ -554,7 +566,7 @@
 
         /* Donate Section */
         .donate {
-            background-color: #121212;
+            background-color: #f8f9fa; /* Very light grey */
         }
 
         .donate .container {
@@ -570,12 +582,13 @@
         }
 
         .donate-card {
-            background-color: #212121;
+            background-color: #ffffff; /* White background */
             padding: 30px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             width: 300px;
             text-align: center;
+            border: 1px solid #ced4da;
         }
 
         .donate-card h3 {
@@ -599,9 +612,9 @@
             width: 100%;
             padding: 12px;
             border-radius: 5px;
-            border: 1px solid #424242;
-            background-color: #303030;
-            color: #ffffff;
+            border: 1px solid #ced4da;
+            background-color: #ffffff;
+            color: #343a40;
             font-size: 1rem;
             margin-bottom: 15px;
         }
@@ -613,7 +626,8 @@
         .qr-code img {
             width: 150px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+            border: 1px solid #ced4da;
         }
 
         .live-tracker {
@@ -625,12 +639,13 @@
         }
 
         .donation-item {
-            background-color: #212121;
+            background-color: #ffffff; /* White background */
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 10px;
             text-align: left;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+            border: 1px solid #ced4da;
         }
 
         .donation-item:last-child {
@@ -643,7 +658,8 @@
 
         /* Get Involved Section */
         .get-involved {
-            background-color: #212121;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .get-involved .container {
@@ -665,12 +681,13 @@
         }
 
         .volunteer-steps li {
-            background-color: #303030;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             margin-bottom: 15px;
             text-align: left;
+            border: 1px solid #ced4da;
         }
 
         .volunteer-steps li:last-child {
@@ -692,12 +709,12 @@
         .social-feed iframe {
             width: 100%;
             height: 400px; /* Adjust as needed */
-            border: none;
+            border: 1px solid #ced4da;
         }
 
         /* Islamabad-Based Operations Section */
         .islamabad-operations {
-            background-color: #121212;
+            background-color: #f8f9fa; /* Very light grey */
         }
 
         .islamabad-operations .container {
@@ -711,9 +728,9 @@
         .interactive-map iframe {
             width: 100%;
             height: 400px; /* Adjust height as needed */
-            border: none;
+            border: 1px solid #ced4da;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         }
 
         .regional-stories {
@@ -725,12 +742,13 @@
         }
 
         .story-card {
-            background-color: #212121;
+            background-color: #ffffff; /* White background */
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             margin-bottom: 15px;
             text-align: left;
+            border: 1px solid #ced4da;
         }
 
         .story-card:last-child {
@@ -747,7 +765,8 @@
 
         /* Contact Us Section */
         .contact {
-            background-color: #212121;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .contact .container {
@@ -783,9 +802,9 @@
             width: 100%;
             padding: 12px;
             border-radius: 5px;
-            border: 1px solid #424242;
-            background-color: #303030;
-            color: #ffffff;
+            border: 1px solid #ced4da;
+            background-color: #ffffff;
+            color: #343a40;
             font-size: 1rem;
         }
 
@@ -815,17 +834,17 @@
             display: inline-block;
             margin: 0 10px;
             font-size: 1.5rem;
-            color: #ffffff;
+            color: #343a40;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #03a9f4;
+            color: #007bff;
         }
 
         /* Footer */
         .footer {
-            background-color: #000000;
+            background-color: #343a40; /* Dark grey */
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
@@ -874,7 +893,7 @@
                 width: 100%;
             }
 
-            .timeline::before {
+             .timeline::before {
                 left: 5%; /* Align to the left side on smaller screens */
             }
 
@@ -910,33 +929,26 @@
         button:focus,
         input:focus,
         textarea:focus {
-            outline: 2px solid #03a9f4; /* Electric Blue */
-            outline-offset: 2px; /* Distance the outline from the element */
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
         }
 
         /* High contrast mode adjustments (example) */
         @media (prefers-contrast: more) {
             body {
-                background-color: black;
-                color: white;
+                background-color: white;
+                color: black;
             }
 
             a {
-                color: yellow;
+                color: blue;
             }
 
             .btn {
-                background-color: yellow;
-                color: black;
+                background-color: blue;
+                color: white;
             }
         }
-
-        /* Additional Accessibility Tips */
-        /* 1. Ensure sufficient color contrast between text and background. */
-        /* 2. Provide alternative text for all images. */
-        /* 3. Use semantic HTML elements (e.g., <article>, <nav>, <aside>). */
-        /* 4. Make sure your website is navigable by keyboard alone. */
-        /* 5. Use ARIA attributes to enhance accessibility. */
 
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&display=swap">
@@ -947,7 +959,10 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="navbar-brand">Sam Life Savers</a>
+            <a href="#" class="navbar-brand">
+                <img src="/logo.png" alt="Sam Life Savers Logo" class="navbar-logo">
+                Sam Life Savers
+            </a>
             <ul class="navbar-nav">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -957,10 +972,6 @@
                 <li><a href="#donate" class="donate-link">Donate</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="language-switcher">
-                <button>English</button>
-                <button>Urdu</button>
-            </div>
             <div class="auth-buttons">
                 <button>Login</button>
                 <button>Volunteer</button>
@@ -971,7 +982,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <video autoplay loop muted>
-            <source src="https://player.vimeo.com/external/318741231.sd.mp4?s=8989c794e2ba9a7ec569c266d23a8c7a7ca8af3f&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+            <source src="/video-hero.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
@@ -989,7 +1000,7 @@
         <div class="container">
             <div class="about-left">
                 <video autoplay loop muted>
-                    <source src="https://player.vimeo.com/external/417129871.sd.mp4?s=e29a5c38e7efc6b7ed165ae5dd5e6cfcf00c6f20&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                    <source src="/video-about-us.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -998,7 +1009,7 @@
                 <p>Sam Life Savers is a non-profit organization dedicated to improving the lives of vulnerable communities through sustainable programs and compassionate service.</p>
                 <p>We believe that everyone deserves access to healthcare, education, and a safe environment.</p>
 
-                <h3>Our Timeline</h3>
+                 <h3>Our Timeline</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
@@ -1046,371 +1057,370 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3 id="livesSaved">25,000+</h3>
-                    
-<p>Lives Saved</p>
-</div>
-<div class="stat-card">
-    <h3 id="medicalAid">500,000+</h3>
-    <p>Medical Aid Provided</p>
-</div>
-<div class="stat-card">
-    <h3 id="volunteers">10,000+</h3>
-    <p>Volunteers</p>
-</div>
-</div>
+                    <p>Lives Saved</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="medicalAid">500,000+</h3>
+                    <p>Medical Aid Provided</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="volunteers">10,000+</h3>
+                    <p>Volunteers</p>
+                </div>
+            </div>
 
-<h2>Success Stories</h2>
-<div class="success-stories">
-<p>Watch these inspiring stories of transformation and hope.</p>
-<div class="carousel-slider">
-    <div class="carousel-slide">
-        <h4>Story 1: Aisha's Journey</h4>
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>Aisha received life-saving surgery through our healthcare program, and is now thriving.</p>
-    </div>
-    <div class="carousel-slide">
-        <h4>Story 2: Rashid's Education</h4>
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>Rashid completed our literacy program and is now pursuing his dream of becoming a teacher.</p>
-    </div>
-    <div class="carousel-slide">
-        <h4>Story 3: Fatima's Hope</h4>
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>Fatima's family received disaster relief aid after the floods, and are now rebuilding their lives.</p>
-    </div>
-     <div class="carousel-slide">
-        <h4>Story 4: Ali's Success</h4>
-         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>Ali's life got better because of life savers.</p>
-    </div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Programs & Initiatives Section -->
-<section class="section programs" id="programs">
-<div class="container">
-<h2>Our Programs & Initiatives</h2>
-<p>Explore our diverse range of programs designed to address critical needs in our communities.</p>
-
-<div class="programs-grid">
-<div class="program-card">
-    <h3>Healthcare & Medical Aid</h3>
-    <p>Providing access to quality healthcare and essential medical supplies.</p>
-    <button class="btn" onclick="openPopup('healthcare')">Learn More</button>
-</div>
-<div class="program-card">
-    <h3>Disaster Relief Operations</h3>
-    <p>Responding to emergencies with immediate aid and long-term recovery support.</p>
-    <button class="btn" onclick="openPopup('disaster')">Learn More</button>
-</div>
-<div class="program-card">
-    <h3>Education & Awareness Campaigns</h3>
-    <p>Empowering communities through literacy, skills development, and public awareness.</p>
-    <button class="btn" onclick="openPopup('education')">Learn More</button>
-</div>
-<div class="program-card">
-    <h3>Blood Donation Drives</h3>
-    <p>Organizing blood donation drives to ensure a steady supply for those in need.</p>
-    <button class="btn" onclick="openPopup('blood')">Learn More</button>
-</div>
-<div class="program-card">
-    <h3>Community Welfare Projects</h3>
-    <p>Implementing projects to improve infrastructure, sanitation, and overall quality of life.</p>
-    <button class="btn" onclick="openPopup('community')">Learn More</button>
-</div>
-</div>
-
-<div class="program-popup" id="healthcare-popup">
-<div class="popup-content">
-    <button class="close-popup" onclick="closePopup('healthcare')">×</button>
-    <h3>Healthcare & Medical Aid</h3>
-    <p>Our Healthcare & Medical Aid program focuses on providing access to quality medical care for underprivileged communities. We conduct medical camps, distribute essential medicines, and support local clinics. Your donations help us save lives and improve the health of those in need.</p>
-    <p>Our Healthcare & Medical Aid program focuses on providing access to quality medical care for underprivileged communities. We conduct medical camps, distribute essential medicines, and support local clinics. Your donations help us save lives and improve the health of those in need.</p>
-</div>
-</div>
-
-<div class="program-popup" id="disaster-popup">
-<div class="popup-content">
-    <button class="close-popup" onclick="closePopup('disaster')">×</button>
-    <h3>Disaster Relief Operations</h3>
-    <p>When disaster strikes, we are on the ground providing immediate relief to affected communities. We distribute food, water, shelter, and medical supplies. Your support enables us to respond quickly and effectively, helping families rebuild their lives.</p>
-    <p>When disaster strikes, we are on the ground providing immediate relief to affected communities. We distribute food, water, shelter, and medical supplies. Your support enables us to respond quickly and effectively, helping families rebuild their lives.</p>
-</div>
-</div>
-
-<div class="program-popup" id="education-popup">
-<div class="popup-content">
-    <button class="close-popup" onclick="closePopup('education')">×</button>
-    <h3>Education & Awareness Campaigns</h3>
-    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality education for children and adults. We run literacy programs, vocational training courses, and public awareness campaigns. Your contributions empower individuals to build a brighter future.</p>
-    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality education for children and adults. We run literacy programs, vocational training courses, and public awareness campaigns. Your contributions empower individuals to build a brighter future.</p>
-</div>
-</div>
-<div class="program-popup" id="blood-popup">
-<div class="popup-content">
-    <button class="close-popup" onclick="closePopup('blood')">×</button>
-    <h3>Blood Donation Drives</h3>
-    <p>Blood Donation is very important. Our Education & Awareness Campaigns focus on providing access to quality Blood Donation for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
-    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality Blood Donation for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
-</div>
-</div>
-<div class="program-popup" id="community-popup">
-<div class="popup-content">
-    <button class="close-popup" onclick="closePopup('community')">×</button>
-    <h3>Community Program Drives</h3>
-    <p>Community is very important. Our Community & Awareness Campaigns focus on providing access to quality services for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
-    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality Community Services for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Donate Section -->
-<section class="section donate" id="donate">
-<div class="container">
-<h2>Donate</h2>
-<p>Your generous donation can help us save lives and transform communities.</p>
-
-<div class="donate-cards">
-<div class="donate-card">
-    <h3>One-Time Donation</h3>
-    <p>Make a single donation to support our critical programs.</p>
-    <button class="btn">Donate Now</button>
-</div>
-<div class="donate-card">
-    <h3>Monthly Support</h3>
-    <p>Become a monthly sustainer and provide ongoing support.</p>
-    <button class="btn">Donate Monthly</button>
-</div>
-<div class="donate-card">
-    <h3>Custom Amount</h3>
-    <p>Donate a custom amount to a specific program or area of need.</p>
-    <div class="custom-amount">
-        <input type="number" placeholder="Enter Amount">
-        <button class="btn">Donate Custom Amount</button>
-    </div>
-</div>
-</div>
-
-<div class="qr-code">
-<p>Scan the QR code to donate instantly.</p>
-<img src="https://www.qrcode-monkey.com/img/default_qr_logo.png" alt="QR Code">
-</div>
-
-<div class="live-tracker">
-<h3>Recent Donations</h3>
-<div class="donation-item">
-    <p><strong>Anonymous</strong> donated $50</p>
-</div>
-<div class="donation-item">
-    <p><strong>John Doe</strong> donated $100</p>
-</div>
-<div class="donation-item">
-    <p><strong>Jane Smith</strong> donated $25</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Get Involved Section -->
-<section class="section get-involved" id="get-involved">
-<div class="container">
-<h2>Get Involved</h2>
-<p>Join our community of volunteers and partners to make a difference.</p>
-
-<div class="volunteer-registration">
-<h2>Volunteer Registration</h2>
-<p>Ready to make a hands-on impact? Follow these simple steps:</p>
-<ol class="volunteer-steps">
-    <li>Create an account on our website.</li>
-    <li>Complete the volunteer application form.</li>
-    <li>Attend a volunteer orientation session.</li>
-    <li>Start volunteering and changing lives!</li>
-</ol>
-</div>
-
-<div class="corporate-partnership">
-<h2>Corporate Partnership</h2>
-<p>Partner with us to amplify your social impact and support our mission.</p>
-<a href="#" class="btn">Explore Partnership Opportunities</a>
-</div>
-
-<div class="social-feed">
-<h2>Social Media Feed</h2>
-<p>Stay up-to-date with our latest activities and news.</p>
- <iframe src="https://www.instagram.com/p/Cv_b1Y4o6-0/embed" width="320" height="440" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-</div>
-</div>
-</section>
-
-<!-- Islamabad-Based Operations Section -->
-<section class="section islamabad-operations">
-<div class="container">
-<h2>Islamabad-Based Operations</h2>
-<p>Learn more about our local initiatives and impact in Islamabad.</p>
-
-<div class="interactive-map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26534.888542856432!2d73.0471432935281!3d33.72361868765431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e598c269172bbd%3A0x3482624010110589!2sIslamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1685361027230!5m2!1sen!2sus"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-
-<div class="regional-stories">
-<h2>Regional Success Stories</h2>
-<p>Read about the positive impact we're making in Islamabad and surrounding areas.</p>
-
-<div class="story-card">
-    <h3>Rescuing the community</h3>
-    <p>Many people were helped!</p>
-</div>
-
-<div class="story-card">
-    <h3>Helping many people get health</h3>
-    <p>People now have access to many medical facilities!</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Contact Us Section -->
-<section class="section contact" id="contact">
-<div class="container">
-<h2>Contact Us</h2>
-<p>Get in touch with us to learn more or get involved.</p>
-
-<div class="contact-grid">
-<div class="contact-form">
-    <h2>Send us a Message</h2>
-    <form>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your Name">
+            <h2>Success Stories</h2>
+            <div class="success-stories">
+                <p>Watch these inspiring stories of transformation and hope.</p>
+                <div class="carousel-slider">
+                    <div class="carousel-slide">
+                        <h4>Story 1: Aisha's Journey</h4>
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Aisha received life-saving surgery through our healthcare program, and is now thriving.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h4>Story 2: Rashid's Education</h4>
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Rashid completed our literacy program and is now pursuing his dream of becoming a teacher.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h4>Story 3: Fatima's Hope</h4>
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Fatima's family received disaster relief aid after the floods, and are now rebuilding their lives.</p>
+                    </div>
+                     <div class="carousel-slide">
+                        <h4>Story 4: Ali's Success</h4>
+                         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p>Ali's life got better because of life savers.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Your Email">
+    </section>
+
+    <!-- Programs & Initiatives Section -->
+    <section class="section programs" id="programs">
+        <div class="container">
+            <h2>Our Programs & Initiatives</h2>
+            <p>Explore our diverse range of programs designed to address critical needs in our communities.</p>
+
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h3>Healthcare & Medical Aid</h3>
+                    <p>Providing access to quality healthcare and essential medical supplies.</p>
+                    <button class="btn" onclick="openPopup('healthcare')">Learn More</button>
+                </div>
+                <div class="program-card">
+                    <h3>Disaster Relief Operations</h3>
+                    <p>Responding to emergencies with immediate aid and long-term recovery support.</p>
+                    <button class="btn" onclick="openPopup('disaster')">Learn More</button>
+                </div>
+                <div class="program-card">
+                    <h3>Education & Awareness Campaigns</h3>
+                    <p>Empowering communities through literacy, skills development, and public awareness.</p>
+                    <button class="btn" onclick="openPopup('education')">Learn More</button>
+                </div>
+                <div class="program-card">
+                    <h3>Blood Donation Drives</h3>
+                    <p>Organizing blood donation drives to ensure a steady supply for those in need.</p>
+                    <button class="btn" onclick="openPopup('blood')">Learn More</button>
+                </div>
+                <div class="program-card">
+                    <h3>Community Welfare Projects</h3>
+                    <p>Implementing projects to improve infrastructure, sanitation, and overall quality of life.</p>
+                    <button class="btn" onclick="openPopup('community')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="program-popup" id="healthcare-popup">
+                <div class="popup-content">
+                    <button class="close-popup" onclick="closePopup('healthcare')">×</button>
+                    <h3>Healthcare & Medical Aid</h3>
+                    <p>Our Healthcare & Medical Aid program focuses on providing access to quality medical care for underprivileged communities. We conduct medical camps, distribute essential medicines, and support local clinics. Your donations help us save lives and improve the health of those in need.</p>
+                    <p>Our Healthcare & Medical Aid program focuses on providing access to quality medical care for underprivileged communities. We conduct medical camps, distribute essential medicines, and support local clinics. Your donations help us save lives and improve the health of those in need.</p>
+                </div>
+            </div>
+
+            <div class="program-popup" id="disaster-popup">
+                <div class="popup-content">
+                    <button class="close-popup" onclick="closePopup('disaster')">×</button>
+                    <h3>Disaster Relief Operations</h3>
+                    <p>When disaster strikes, we are on the ground providing immediate relief to affected communities. We distribute food, water, shelter, and medical supplies. Your support enables us to respond quickly and effectively, helping families rebuild their lives.</p>
+                    <p>When disaster strikes, we are on the ground providing immediate relief to affected communities. We distribute food, water, shelter, and medical supplies. Your support enables us to respond quickly and effectively, helping families rebuild their lives.</p>
+                </div>
+            </div>
+
+            <div class="program-popup" id="education-popup">
+                <div class="popup-content">
+                    <button class="close-popup" onclick="closePopup('education')">×</button>
+                    <h3>Education & Awareness Campaigns</h3>
+                    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality education for children and adults. We run literacy programs, vocational training courses, and public awareness campaigns. Your contributions empower individuals to build a brighter future.</p>
+                    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality education for children and adults. We run literacy programs, vocational training courses, and public awareness campaigns. Your contributions empower individuals to build a brighter future.</p>
+                </div>
+            </div>
+            <div class="program-popup" id="blood-popup">
+                <div class="popup-content">
+                    <button class="close-popup" onclick="closePopup('blood')">×</button>
+                    <h3>Blood Donation Drives</h3>
+                    <p>Blood Donation is very important. Our Education & Awareness Campaigns focus on providing access to quality Blood Donation for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
+                    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality Blood Donation for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
+                </div>
+            </div>
+             <div class="program-popup" id="community-popup">
+                <div class="popup-content">
+                    <button class="close-popup" onclick="closePopup('community')">×</button>
+                    <h3>Community Program Drives</h3>
+                    <p>Community is very important. Our Community & Awareness Campaigns focus on providing access to quality services for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
+                    <p>Education is the key to breaking the cycle of poverty. Our Education & Awareness Campaigns focus on providing access to quality Community Services for children and adults. We run donation programs and campaigns. Your contributions empower individuals to build a brighter future.</p>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Your Message"></textarea>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="section donate" id="donate">
+        <div class="container">
+            <h2>Donate</h2>
+            <p>Your generous donation can help us save lives and transform communities.</p>
+
+            <div class="donate-cards">
+                <div class="donate-card">
+                    <h3>One-Time Donation</h3>
+                    <p>Make a single donation to support our critical programs.</p>
+                    <button class="btn">Donate Now</button>
+                </div>
+                <div class="donate-card">
+                    <h3>Monthly Support</h3>
+                    <p>Become a monthly sustainer and provide ongoing support.</p>
+                    <button class="btn">Donate Monthly</button>
+                </div>
+                <div class="donate-card">
+                    <h3>Custom Amount</h3>
+                    <p>Donate a custom amount to a specific program or area of need.</p>
+                    <div class="custom-amount">
+                        <input type="number" placeholder="Enter Amount">
+                        <button class="btn">Donate Custom Amount</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qr-code">
+                <p>Scan the QR code to donate instantly.</p>
+                <img src="https://www.qrcode-monkey.com/img/default_qr_logo.png" alt="QR Code">
+            </div>
+
+            <div class="live-tracker">
+                <h3>Recent Donations</h3>
+                <div class="donation-item">
+                    <p><strong>Anonymous</strong> donated $50</p>
+                </div>
+                <div class="donation-item">
+                    <p><strong>John Doe</strong> donated $100</p>
+                </div>
+                <div class="donation-item">
+                    <p><strong>Jane Smith</strong> donated $25</p>
+                </div>
+            </div>
         </div>
-        <button class="btn">Send Message</button>
-    </form>
-</div>
+    </section>
 
-<div class="contact-info">
-    <h2>Contact Information</h2>
-    <p><i class="fas fa-map-marker-alt"></i>Islamabad</p>
-    <p><i class="fas fa-phone"></i> +92 3333333333</p>
-    <p><i class="fas fa-envelope"></i> info@samlifesavers.org</p>
+    <!-- Get Involved Section -->
+    <section class="section get-involved" id="get-involved">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <p>Join our community of volunteers and partners to make a difference.</p>
 
-    <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-</div>
-</div>
-</div>
-</section>
+            <div class="volunteer-registration">
+                <h2>Volunteer Registration</h2>
+                <p>Ready to make a hands-on impact? Follow these simple steps:</p>
+                <ol class="volunteer-steps">
+                    <li>Create an account on our website.</li>
+                    <li>Complete the volunteer application form.</li>
+                    <li>Attend a volunteer orientation session.</li>
+                    <li>Start volunteering and changing lives!</li>
+                </ol>
+            </div>
 
-<!-- Footer -->
-<footer class="footer">
-<div class="container">
-<p>© 2024 Sam Life Savers. All Rights Reserved.</p>
-</div>
-</footer>
+            <div class="corporate-partnership">
+                <h2>Corporate Partnership</h2>
+                <p>Partner with us to amplify your social impact and support our mission.</p>
+                <a href="#" class="btn">Explore Partnership Opportunities</a>
+            </div>
 
-<script>
-// Sticky Navbar
-window.addEventListener('scroll', function() {
-const navbar = document.querySelector('.navbar');
-if (window.scrollY > 50) {
-navbar.classList.add('sticky');
-} else {
-navbar.classList.remove('sticky');
-}
-});
+                <div class="social-feed">
+                    <h2>Social Media Feed</h2>
+                    <p>Stay up-to-date with our latest activities and news.</p>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DGSLtHrosMM/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DGSLtHrosMM/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DGSLtHrosMM/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by SAM Life Savers (@samlife_savers)</a></p></div></blockquote>
+                    <script async src="//www.instagram.com/embed.js"></script>
+                </div>
+    </section>
 
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
+    <!-- Islamabad-Based Operations Section -->
+    <section class="section islamabad-operations">
+        <div class="container">
+            <h2>Islamabad-Based Operations</h2>
+            <p>Learn more about our local initiatives and impact in Islamabad.</p>
 
-document.querySelector(this.getAttribute('href')).scrollIntoView({
-    behavior: 'smooth'
-});
-});
-});
+            <div class="interactive-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26534.888542856432!2d73.0471432935281!3d33.72361868765431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e598c269172bbd%3A0x3482624010110589!2sIslamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1685361027230!5m2!1sen!2sus"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
-// Popup Functionality
-function openPopup(popupId) {
-document.getElementById(popupId + '-popup').classList.add('show');
-}
+            <div class="regional-stories">
+                <h2>Regional Success Stories</h2>
+                <p>Read about the positive impact we're making in Islamabad and surrounding areas.</p>
 
-function closePopup(popupId) {
-document.getElementById(popupId + '-popup').classList.remove('show');
-}
+                <div class="story-card">
+                    <h3>Rescuing the community</h3>
+                    <p>Many people were helped!</p>
+                </div>
 
-// Counter Animation
-function animateCounter(id, endValue, duration) {
-const element = document.getElementById(id);
-let startValue = 0;
-const increment = Math.ceil(endValue / (duration / 10)); // Adjust for faster animation
+                <div class="story-card">
+                    <h3>Helping many people get health</h3>
+                    <p>People now have access to many medical facilities!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function updateCounter() {
-startValue += increment;
-element.textContent = startValue.toLocaleString(); // Add commas for readability
+    <!-- Contact Us Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us to learn more or get involved.</p>
 
-if (startValue < endValue) {
-    requestAnimationFrame(updateCounter);
-} else {
-    element.textContent = endValue.toLocaleString() + '+'; // Ensure '+', sign is shown after the animation
-}
-}
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your Message"></textarea>
+                        </div>
+                        <button class="btn">Send Message</button>
+                    </form>
+                </div>
 
-updateCounter();
-}
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p><i class="fas fa-map-marker-alt"></i>Islamabad</p>
+                    <p><i class="fas fa-phone"></i> +92 3333333333</p>
+                    <p><i class="fas fa-envelope"></i> info@samlifesavers.org</p>
 
-// Start Counter Animations (adjust duration as needed)
-animateCounter('livesSaved', 25000, 2000);
-animateCounter('medicalAid', 500000, 2500);
-animateCounter('volunteers', 10000, 1500);
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-// Donation Tracker Simulation (replace with actual data fetching)
-function simulateDonations() {
-const donations = [
-{ name: "Aisha Khan", amount: 75 },
-{ name: "David Lee", amount: 120 },
-{ name: "Fatima Ali", amount: 50 },
-{ name: "Michael Brown", amount: 200 },
-{ name: "Sara Johnson", amount: 30 },
-{ name: "Ahmed Raza", amount: 100 },
-{ name: "Emily White", amount: 80 },
-{ name: "Omar Aziz", amount: 60 },
-{ name: "Jessica Green", amount: 150 },
-{ name: "Ali Hassan", amount: 40 }
-];
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Sam Life Savers. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-const trackerContainer = document.querySelector('.live-tracker');
-donations.forEach(donation => {
-const donationItem = document.createElement('div');
-donationItem.classList.add('donation-item');
-donationItem.innerHTML = `<p><strong>${donation.name}</strong> donated $${donation.amount}</p>`;
-trackerContainer.appendChild(donationItem);
+    <script>
+        // Sticky Navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
 
-// Limit to 3 items and remove the oldest if necessary
-const items = trackerContainer.querySelectorAll('.donation-item');
-if (items.length > 3) {
-    trackerContainer.removeChild(items[0]);
-}
-});
-}
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-setInterval(simulateDonations, 5000); // Simulate donation updates every 5 seconds
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-</script>
+        // Popup Functionality
+        function openPopup(popupId) {
+            document.getElementById(popupId + '-popup').classList.add('show');
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId + '-popup').classList.remove('show');
+        }
+
+        // Counter Animation
+        function animateCounter(id, endValue, duration) {
+            const element = document.getElementById(id);
+            let startValue = 0;
+            const increment = Math.ceil(endValue / (duration / 10)); // Adjust for faster animation
+
+            function updateCounter() {
+                startValue += increment;
+                element.textContent = startValue.toLocaleString(); // Add commas for readability
+
+                if (startValue < endValue) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = endValue.toLocaleString() + '+'; // Ensure '+', sign is shown after the animation
+                }
+            }
+
+            updateCounter();
+        }
+
+        // Start Counter Animations (adjust duration as needed)
+        animateCounter('livesSaved', 25000, 2000);
+        animateCounter('medicalAid', 500000, 2500);
+        animateCounter('volunteers', 10000, 1500);
+
+        // Donation Tracker Simulation (replace with actual data fetching)
+        function simulateDonations() {
+            const donations = [
+                { name: "Aisha Khan", amount: 75 },
+                { name: "David Lee", amount: 120 },
+                { name: "Fatima Ali", amount: 50 },
+                { name: "Michael Brown", amount: 200 },
+                { name: "Sara Johnson", amount: 30 },
+                { name: "Ahmed Raza", amount: 100 },
+                { name: "Emily White", amount: 80 },
+                { name: "Omar Aziz", amount: 60 },
+                { name: "Jessica Green", amount: 150 },
+                { name: "Ali Hassan", amount: 40 }
+            ];
+
+            const trackerContainer = document.querySelector('.live-tracker');
+            donations.forEach(donation => {
+                const donationItem = document.createElement('div');
+                donationItem.classList.add('donation-item');
+                donationItem.innerHTML = `<p><strong>${donation.name}</strong> donated $${donation.amount}</p>`;
+                trackerContainer.appendChild(donationItem);
+
+                // Limit to 3 items and remove the oldest if necessary
+                const items = trackerContainer.querySelectorAll('.donation-item');
+                if (items.length > 3) {
+                    trackerContainer.removeChild(items[0]);
+                }
+            });
+        }
+
+        setInterval(simulateDonations, 5000); // Simulate donation updates every 5 seconds
+
+    </script>
 
 </body>
 </html>
